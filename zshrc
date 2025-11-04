@@ -5,7 +5,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Enviroment variables
+# Environment variables
 export PATH="$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 export GOEXPERIMENT=greenteagc
 export GOROOT="$(brew --prefix golang)/libexec"
