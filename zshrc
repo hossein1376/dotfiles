@@ -10,6 +10,7 @@ export PATH="$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 export GOEXPERIMENT=greenteagc
 export GOROOT="$(brew --prefix golang)/libexec"
 export CLICOLOR=1
+export LESSHISTFILE=-
 export HOMEBREW_NO_ENV_HINTS=1
 export RUSTUP_DIST_SERVER=https://cloudfront-static.rust-lang.org
 
@@ -61,8 +62,8 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 #export EDITOR=/usr/bin/nano
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
