@@ -33,6 +33,7 @@ alias df="df -h"
 alias find="fd"
 alias cd..="cd .."
 alias car="cat"
+alias ss="sudo lsof -i -P | grep LISTEN"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
