@@ -1,0 +1,40 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "telemetry": { "diagnostics": false, "metrics": false },
+
+  //UI
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_family": "CaskaydiaCove Nerd Font",
+  "wrap_guides": [80],
+  "show_wrap_guides": true,
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_onboarding_banner": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "terminal": { "font_family": "CaskaydiaCove Nerd Font", "font_size": 14 },
+  "collaboration_panel": { "button": false },
+  "agent": { "enabled": false },
+  "git": { "inline_blame": { "enabled": false } },
+  "git_panel": { "sort_by_path": true },
+  "autosave": "on_focus_change",
+
+  "languages": {
+    "HTML": {
+      "formatter": "language_server"
+    }
+  }
+}
