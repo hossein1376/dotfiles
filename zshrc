@@ -1,17 +1,34 @@
 autoload -Uz compinit && compinit
 eval "$(starship init zsh)"
-eval "$(/opt/homebrew/bin/mise activate zsh)"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(mise activate zsh)"
+
+
+case `uname` in
+  Darwin)
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+    export GOROOT="$(brew --prefix golang)/libexec"
+    export HOMEBREW_NO_ENV_HINTS=1
+
+    alias ss="sudo lsof -i -P | grep LISTEN"
+
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  ;;
+  Linux)
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  ;;
+esac
+
 
 # Environment variables
 export PATH="$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 export GOEXPERIMENT=greenteagc
-export GOROOT="$(brew --prefix golang)/libexec"
 export CLICOLOR=1
 export LESSHISTFILE=-
-export HOMEBREW_NO_ENV_HINTS=1
 export RUSTUP_DIST_SERVER=https://cloudfront-static.rust-lang.org
 
 # Minio
@@ -25,6 +42,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 alias awslocal="aws"
 alias aws="aws --endpoint-url=http://127.0.0.1:4566"
 
+
 # Common aliases
 alias ls="eza"
 alias cat="bat"
@@ -33,9 +51,7 @@ alias df="df -h"
 alias find="fd"
 alias cd..="cd .."
 alias car="cat"
-alias ss="sudo lsof -i -P | grep LISTEN"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #
 # from `manjaro-zsh-config`
