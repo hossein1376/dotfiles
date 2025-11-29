@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "telemetry": { "diagnostics": false, "metrics": false },
 
   //UI
@@ -27,7 +30,11 @@
   "icon_theme": "Catppuccin Mocha",
   "terminal": { "font_family": "CaskaydiaCove Nerd Font", "font_size": 14 },
   "collaboration_panel": { "button": false },
-  "agent": { "enabled": false },
+  "agent": { "default_model": {
+                   "provider": "lmstudio",
+                   "model": "openai/gpt-oss-20b"
+             },
+             "enabled": true },
   "git": { "inline_blame": { "enabled": false } },
   "git_panel": { "sort_by_path": true },
   "autosave": "on_focus_change",

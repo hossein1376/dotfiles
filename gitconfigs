@@ -1,6 +1,9 @@
 [user]
 	name = Hossein Yazdani
 	email = hosseinyazdani1376@gmail.com
+	signingkey = 257889D8
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
 [alias]
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
 	logg = log --pretty=fuller
@@ -21,3 +24,7 @@
     autoSetupRemote = true
 [pull]
 	rebase = true
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
